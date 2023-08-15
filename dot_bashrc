@@ -1,0 +1,20 @@
+#
+# ~/.bashrc
+#
+
+# If not running interactively, don't do anything
+[[ $- != *i* ]] && return
+
+alias ls='ls --color=auto'
+alias grep='grep --color=auto'
+alias vi='nvim'
+alias vim='nvim'
+alias sudo='sudo '
+alias matrix='konsoleprofile ColorScheme=GreenOnBlack 
+unimatrix -a -c green -g black -i -s 95 -o'
+#PS1='[\u@\h \W]\$ '
+PS1="$(if [[ ${EUID} == 0 ]]; then echo '\[\033[1;38;5;160m\]\u'; else echo '\[\033[1;38;5;206m\]\u'; fi)\[\e[m\]:\[\033[01;38;5;33m\] \w $(if [[ ${EUID} == 0 ]]; then echo '\[\033[1;38;5;160m\]\$ '; else echo '\[\033[1;38;5;206m\]\$ '; fi)\[\e[m\]"
+PS2="$(if [[ ${EUID} == 0 ]]; then echo '\[\033[0;38;5;160m\]└──> '; else echo '\[\033[0;38;5;206m\]└──> '; fi)\[\e[m\]"
+if [[ ${EUID} != 0 ]]; then
+  neofetch
+fi
