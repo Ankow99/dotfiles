@@ -9,6 +9,9 @@ GNU/Linux Configuration Files Repository
 
 - .bashrc
 - .zshrc
+- .p10k.zsh
+- .gitconfig
+- .ssh/config
 
 ## Dependencies
 
@@ -31,4 +34,11 @@ zsh-sudo-git (AUR)
 zsh-theme-powerlevel10k-git (AUR)
 ttf-meslo-nerd-font-powerlevel10k (AUR)
 unimatrix-git (optional)(AUR)
+```
+
+**.p10k.zsh**
+```
+zsh
+zsh-theme-powerlevel10k-git (AUR)
+ttf-meslo-nerd-font-powerlevel10k (AUR)
 ```
