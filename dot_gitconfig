@@ -1,0 +1,9 @@
+[user]
+	name = Ankow99
+	email = pgdg99@gmail.com
+[core]
+	editor = nvim
+[color]
+	ui = true
+	status = auto
+	branch = auto
