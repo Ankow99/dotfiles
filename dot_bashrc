@@ -1,0 +1,30 @@
+#
+# ~/.bashrc
+#
+
+# If not running interactively, don't do anything
+[[ $- != *i* ]] && return
+
+if [[ ${EUID} != 0 ]]; then
+  neofetch
+fi
+
+alias ls='ls --color=auto'
+alias grep='grep --color=auto'
+alias vi='nvim'
+alias vim='nvim'
+alias sudo='sudo '
+alias matrix='konsoleprofile ColorScheme=GreenOnBlack unimatrix -a -c green -g black -i -s 95 -o'
+
+alias ua-drop-caches='sudo paccache -rk3; yay -Sc --aur --noconfirm'
+alias update-mirrors='export TMPFILE="$(mktemp)"; \
+    sudo true; \
+    rate-mirrors --entry-country=Colombia --save=$TMPFILE arch --max-delay=21600 \
+      && sudo mv /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist-backup \
+      && sudo mv $TMPFILE /etc/pacman.d/mirrorlist \
+      && ua-drop-caches \
+      && yay -Syyu --noconfirm'
+
+#PS1='[\u@\h \W]\$ '
+PS1="$(if [[ ${EUID} == 0 ]]; then echo '\[\033[1;38;5;160m\]\u'; else echo '\[\033[1;38;5;39m\]\u'; fi)\[\e[m\]:\[\033[01;38;5;250m\] \w $(if [[ ${EUID} == 0 ]]; then echo '\[\033[1;38;5;160m\]\$ '; else echo '\[\033[1;38;5;39m\]\$ '; fi)\[\e[m\]"
+PS2="$(if [[ ${EUID} == 0 ]]; then echo '\[\033[0;38;5;160m\]└──> '; else echo '\[\033[0;38;5;39m\]└──> '; fi)\[\e[m\]"
