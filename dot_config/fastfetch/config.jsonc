@@ -56,7 +56,7 @@
     "modules": [
         {
             "type": "title",
-            "format": "{#1}{#34}  {user-name}@{host-name}    Eat  , Sleep 󰋣 , Linux {#}"
+            "format": "{#1}{#34}  {user-name}@{host-name}    Eat  , Sleep 󰋣 , Linux {#}"
         },
         {
             "type": "custom",
