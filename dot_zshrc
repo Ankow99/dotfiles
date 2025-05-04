@@ -1,6 +1,12 @@
 
 if [[ ${EUID} != 0 ]]; then
-  fastfetch
+  if zmodload zsh/terminfo && (( terminfo[colors] >= 256 )); then
+    # Non-root user, terminal supports 256+ colors
+    fastfetch
+  else
+    # Non-root user, basic terminal
+    fastfetch -c ~/.config/fastfetch/config-simple.jsonc
+  fi
 fi
 
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.

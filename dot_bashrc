@@ -6,7 +6,13 @@
 [[ $- != *i* ]] && return
 
 if [[ ${EUID} != 0 ]]; then
-  fastfetch
+  if tput colors &>/dev/null && [ "$(tput colors)" -ge 256 ]; then
+    # Non-root user, terminal supports 256+ colors
+    fastfetch
+  else
+    # Non-root user, basic terminal
+    fastfetch -c ~/.config/fastfetch/config-simple.jsonc
+  fi
 fi
 
 alias ls='ls --color=auto'
