@@ -24,7 +24,8 @@
         },
         "key": {
             "width": 9,             // Aligns keys to this width
-            "type": "string"        // string, icon, both, or none
+            "type": "icon",         // string, icon, both, or none
+            "paddingLeft": 2        // Set the left padding of keys
         },
         "bar": {
             "width": 10,            // Width of percentage bars
@@ -56,98 +57,125 @@
     "modules": [
         {
             "type": "title",
-            "format": "{#1}{#34}  {user-name}@{host-name}    Eat  , Sleep 󰋣 , Linux {#}"
+            "format": "{#1}{#36}  {user-name}{#}{#1}@{#1}{#36}{host-name}    Eat {#}{#36}{#} , {#1}{#36}Sleep {#}{#36}󰋣{#} , {#1}{#36}Linux {#}{#36}{#}",
+            "color": {
+                "user": "bold_blue",
+                "at": "bold_default",
+                "host": "bold_blue"
+            }
         },
         {
             "type": "custom",
-            "format": "{#1}┌{$1}─── OS Information ───{$1}┐{#}"
+            "format": "┌{$1}─── OS Information ───{$1}┐",
+            "outputColor": "bold_default"
         },
         {
             "type": "os",
-            "key": "  "
+            "key": "OS",
+            "keyIcon": ""
         },
         {
             "type": "host",
-            "key": "  󰌢"
+            "key": "Host",
+            "key": "󰌢"
         },
         {
             "type": "kernel",
-            "key": "  "
+            "key": "Kernel",
+            "keyIcon": ""
         },
         {
             "type": "shell",
-            "key": "  "
+            "key": "Shell",
+            "keyIcon": ""
         },
         {
             "type": "packages",
-            "key": "  󱙝"
+            "key": "Packages",
+            "keyIcon": "󱙝"
         },
         {
             "type": "uptime",
-            "key": "  󰅐"
+            "key": "Uptime",
+            "keyIcon": "󰅐"
         },
         {
             "type": "custom",
-            "format": "{#1}├{$1} Hardware Information {$1}┤{#}"
+            "format": "├{$1} Hardware Information {$1}┤",
+            "outputColor": "bold_default"
         },
         {
             "type": "board",
-            "key": "  󰌢"
+            "key": "Board",
+            "keyIcon": "󰌢"
         },
         {
             "type": "cpu",
             "temp": true,
-            "key": "  "
+            "key": "CPU",
+            "keyIcon": ""
         },
         {
             "type": "gpu",
             "driverSpecific": true,
             "temp": true,
-            "key": "  󰾲"
+            "key": "GPU",
+            "keyIcon": "󰾲"
         },
         {
             "type": "memory",
-            "key": "  "
+            "key": "Memory",
+            "keyIcon": ""
         },
 //        {
 //            "type": "swap",
-//            "key": "  󰓡"
+//            "key": "Swap",
+//            "keyIcon": "󰓡"
 //        },
         {
             "type": "display",
-            "key": "  󰍹"
+            "key": "Display",
+            "keyIcon": "󰍹"
         },
         {
             "type": "disk",
-            "key": "  "
+            "key": "Disk",
+            "keyIcon": ""
         },
         {
             "type": "custom",
-            "format": "{#1}├{$1} Software Information {$1}┤{#}"
+            "format": "├{$1} Software Information {$1}┤",
+            "outputColor": "bold_default"
         },
         {
             "type": "de",
-            "key": "  "
+            "key": "DE",
+            "keyIcon": ""
         },
         {
             "type": "wm",
-            "key": "  "
+            "key": "WM",
+            "keyIcon": ""
         },
         {
             "type": "theme",
-            "key": "  󰉼"
+            "key": "Theme",
+            "keyIcon": "󰉼"
         },
         {
             "type": "terminal",
-            "key": "  "
+            "key": "Terminal",
+            "keyIcon": ""
         },
         {
             "type": "terminalfont",
-            "key": "  "
+            "key": "Font",
+            "keyIcon": ""
         },
         {
             "type": "custom",
-            "format": "{#1}└{$1}──────────────────────{$1}┘{#}"
+            "format": "└{$1}──────────────────────{$1}┘",
+            "outputColor": "bold_default"
         },
         {
             "type": "custom",
@@ -156,7 +184,8 @@
         {
             "type": "custom",
             "format": "  {#1}󰮯{#}    {#90}󰊠{#}    {#91}󰊠{#}    {#92}󰊠{#}    {#93}󰊠{#}    {#94}󰊠{#}    {#95}󰊠{#}    {#96}󰊠{#}    {#97}󰊠{#}"
-        }
+        },
+        "break"
     ]
 }
 
