@@ -181,7 +181,7 @@ zstyle :omz:plugins:ssh-agent lazy yes
 source /usr/share/zsh/plugins/zsh-sudo/sudo.plugin.zsh
 source /usr/share/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-source /home/paul/.config/ssh-agent.plugin.zsh
+source $HOME/.config/ssh-agent.plugin.zsh
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 
