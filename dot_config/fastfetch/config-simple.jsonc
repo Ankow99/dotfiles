@@ -139,6 +139,19 @@
         },
         {
             "type": "disk",
+            "folders": "/",
+            "key": "Disk",
+            "keyIcon": ""
+        },
+        {
+            "type": "disk",
+            "folders": "/mnt/nvme",
+            "key": "Disk",
+            "keyIcon": ""
+        },
+        {
+            "type": "disk",
+            "folders": "/mnt/ntfs",
             "key": "Disk",
             "keyIcon": ""
         },
