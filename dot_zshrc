@@ -179,7 +179,7 @@ alias lt='eza -aT --color=always --group-directories-first --icons'
 alias l.="eza -a | grep -e '^\.'"
 
 # unimatrix alias
-alias matrix='konsoleprofile ColorScheme=GreenOnBlack unimatrix -a -c green -g black -i -s 95 -o'
+alias matrix='konsoleprofile ColorScheme=GreenOnBlack && unimatrix -a -c green -g black -i -s 95 -o'
 
 # Update mirrors alias
 alias ua-drop-caches='sudo paccache -rk3; yay -Sc --aur --noconfirm'
