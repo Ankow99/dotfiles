@@ -54,3 +54,6 @@ alias update-mirrors='export TMPFILE="$(mktemp)"; \
 #PS1='[\u@\h \W]\$ '
 PS1="$(if [[ ${EUID} == 0 ]]; then echo '\[\033[1;38;5;160m\]\u'; else echo '\[\033[1;38;5;39m\]\u'; fi)\[\e[m\]:\[\033[01;38;5;250m\] \w $(if [[ ${EUID} == 0 ]]; then echo '\[\033[1;38;5;160m\]\$ '; else echo '\[\033[1;38;5;39m\]\$ '; fi)\[\e[m\]"
 PS2="$(if [[ ${EUID} == 0 ]]; then echo '\[\033[0;38;5;160m\]└──> '; else echo '\[\033[0;38;5;39m\]└──> '; fi)\[\e[m\]"
+
+# Added by ProtonUp-Qt on 14-08-2025 15:35:24
+if [ -d "/home/paul/stl/prefix" ]; then export PATH="$PATH:/home/paul/stl/prefix"; fi

@@ -213,3 +213,6 @@ else
   PS1="$(if [[ ${EUID} == 0 ]]; then echo $'%{\e[1;38;5;160m%}%n'; else echo $'%{\e[1;38;5;39m%}%n'; fi)$(echo $'%{\e[m%}:%{\e[1;38;5;250m%} %~ ')$(if [[ ${EUID} == 0 ]]; then echo $'%{\e[1;38;5;160m%}%# '; else echo $'%{\e[1;38;5;39m%}%# '; fi)$(echo $'%{\e[m%}')"
   PS2="$(if [[ ${EUID} == 0 ]]; then echo $'%{\e[0;38;5;160m%}└──> '; else echo $'%{\e[0;38;5;39m%}└──> '; fi)$(echo $'%{\e[m%}')"
 fi
+
+# Added by ProtonUp-Qt on 14-08-2025 15:35:24
+if [ -d "/home/paul/stl/prefix" ]; then export PATH="$PATH:/home/paul/stl/prefix"; fi
