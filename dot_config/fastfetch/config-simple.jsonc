@@ -29,10 +29,10 @@
         },
         "bar": {
             "width": 10,            // Width of percentage bars
-            "borderLeft": "[ ",     // Set the string to use at left border
-            "borderRight": " ]",    // Set the string to use at right border
-            "charElapsed": "■",     // Character for elapsed portion
-            "charTotal": "-"        // Character for total portion
+            "border.left": "[ ",     // Set the string to use at left border
+            "border.right": " ]",    // Set the string to use at right border
+            "char.elapsed": "■",     // Character for elapsed portion
+            "char.total": "-"        // Character for total portion
         },
         "percent": {
             "type": 9,              // 1=number, 2=bar, 3=both, 9=colored number
