@@ -1,0 +1,51 @@
+## Custom aliases
+# alias ls='ls --color=auto'
+alias dir='dir --color=auto'
+alias vdir='vdir --color=auto'
+alias grep='grep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'
+alias vi='nvim'
+alias vim='nvim'
+alias sudo='sudo '
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+alias .....='cd ../../../..'
+alias ......='cd ../../../../..'
+
+# Replace ls with eza
+alias ls='eza --color=always --group-directories-first --icons'
+alias la='eza -a --color=always --group-directories-first --icons'
+alias ll='eza -lh --color=always --group-directories-first --icons'
+alias lt='eza -aT --color=always --group-directories-first --icons'
+alias l.="eza -a | grep -e '^\.'"
+
+# Cleanup orphaned packages
+alias cleanup='sudo pacman -Rns $(pacman -Qdtq)'
+
+# Corporate Laptop
+alias ssh-laptop='ssh pablo.degreiff@canonical.com@192.168.1.68'
+
+# unimatrix alias
+alias matrix='konsoleprofile ColorScheme=GreenOnBlack && unimatrix -a -c green -g black -i -s 95 -o'
+
+# Update mirrors alias
+alias ua-drop-caches='sudo paccache -rk3; yay -Sc --aur --noconfirm'
+alias update-mirrors='export TMPFILE="$(mktemp)"; \
+    sudo true; \
+    rate-mirrors --entry-country=Colombia --save=$TMPFILE arch --max-delay=21600 \
+      && sudo mv /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist-backup \
+      && sudo mv $TMPFILE /etc/pacman.d/mirrorlist \
+      && ua-drop-caches \
+      && yay -Syyu --noconfirm'
+
+# Check if the session is Wayland. If so, use wl-clipboard.
+if [ "$XDG_SESSION_TYPE" = "wayland" ]; then
+    alias clip='wl-copy'
+    alias paste='wl-paste'
+# Otherwise, assume it's X11 and use xclip.
+else
+    alias clip='xclip -selection clip'
+    alias paste='xclip -selection clip -o'
+fi
