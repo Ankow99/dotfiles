@@ -16,43 +16,10 @@ if [[ ${EUID} != 0 ]]; then
   fi
 fi
 
-## Custom aliases
-# alias ls='ls --color=auto'
-alias dir='dir --color=auto'
-alias vdir='vdir --color=auto'
-alias grep='grep --color=auto'
-alias vi='nvim'
-alias vim='nvim'
-alias sudo='sudo '
-alias ..='cd ..'
-alias ...='cd ../..'
-alias ....='cd ../../..'
-alias .....='cd ../../../..'
-alias ......='cd ../../../../..'
-
-# Cleanup orphaned packages
-alias cleanup='sudo pacman -Rns $(pacman -Qdtq)'
-
-# Replace ls with eza
-alias ls='eza --color=always --group-directories-first --icons'
-alias lt='eza -aT --color=always --group-directories-first --icons'
-alias l.="eza -a | grep -e '^\.'"
-
-# Corporate Laptop
-alias ssh-laptop='ssh pablo.degreiff@canonical.com@192.168.1.68'
-
-# unimatrix alias
-alias matrix='konsoleprofile ColorScheme=GreenOnBlack && unimatrix -a -c green -g black -i -s 95 -o'
-
-# Update mirrors alias
-alias ua-drop-caches='sudo paccache -rk3; yay -Sc --aur --noconfirm'
-alias update-mirrors='export TMPFILE="$(mktemp)"; \
-    sudo true; \
-    rate-mirrors --entry-country=Colombia --save=$TMPFILE arch --max-delay=21600 \
-      && sudo mv /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist-backup \
-      && sudo mv $TMPFILE /etc/pacman.d/mirrorlist \
-      && ua-drop-caches \
-      && yay -Syyu --noconfirm'
+# Source .sh_aliases if it exists
+if [ -f "$HOME/.sh_aliases" ]; then
+    source "$HOME/.sh_aliases"
+fi
 
 #PS1='[\u@\h \W]\$ '
 PS1="$(if [[ ${EUID} == 0 ]]; then echo '\[\033[1;38;5;160m\]\u'; else echo '\[\033[1;38;5;39m\]\u'; fi)\[\e[m\]:\[\033[01;38;5;250m\] \w $(if [[ ${EUID} == 0 ]]; then echo '\[\033[1;38;5;160m\]\$ '; else echo '\[\033[1;38;5;39m\]\$ '; fi)\[\e[m\]"
